@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nmap Scan Results</title>
+</head>
+<body>
+    <h1>Nmap Scan Results</h1>
+    <table border="1">
+        <tr>
+            <th>Container Name</th>
+            <th>Target IP</th>
+            <th>Nmap Output</th>
+        </tr>
+        {% for container_name, result in results.items() %}
+        <tr>
+            <td>{{ container_name }}</td>
+            <td>{{ result.target_ip }}</td>
+            <td><pre>{{ result.nmap_output }}</pre></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
